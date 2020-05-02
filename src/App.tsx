@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import './App.scss';
 import Scrollspy from 'react-scrollspy';
-import { Home } from './containers/Home/Home';
 import { Features } from './containers/Features/Features';
 import { Portfolio } from './containers/Portfolio/Portfolio';
 import { Pricing } from './containers/Pricing/Pricing';
@@ -10,6 +9,7 @@ import { Team } from './containers/Team/Team';
 import { Skills } from './containers/Skills/Skills';
 import { Clients } from './containers/Clients/Clients';
 import { Contact } from './containers/Contact/Contact';
+import logo from './img/nuno.png';
 import {
 	Navbar,
 	NavbarBrand,
@@ -18,17 +18,8 @@ import {
 	NavItem,
 	Collapse,
 	NavLink,
+	Container,
 } from 'reactstrap';
-
-// const styledNav = styled(Scrollspy)`
-// 	&&& {
-// 		display: flex;
-// 		justify-content: space-between;
-// 		height: 100px;
-// 		position: fixed;
-// 		color: ${(props) => props.theme.main};
-// 	}
-// `;
 
 const StyledNavItem = styled(NavItem)`
 	&&& > .header-link {
@@ -42,16 +33,20 @@ const StyledNavItem = styled(NavItem)`
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const toggle = () => setIsOpen(!isOpen);
+	const toggleNavbar = () => setIsOpen(!isOpen);
 	return (
-		<div className="App">
+		<Container id="Home" className="App" fluid>
 			<Navbar fixed="top" color="dark" dark expand="lg">
-				<NavbarBrand href="/">BootKamp</NavbarBrand>
+				<NavbarBrand href="/">
+					<img src={logo} alt="" />
+					BootKamp
+				</NavbarBrand>
+				<NavbarToggler onClick={toggleNavbar} className="mr-2" />
 				<Collapse isOpen={isOpen} navbar>
 					<Scrollspy
-						className="scrollspy"
+						className="scrollspy ml-auto"
 						items={[
-							'Home',
+							// 'Home',
 							'Features',
 							'Portfolio',
 							'Pricing',
@@ -105,7 +100,6 @@ function App() {
 					</Scrollspy>
 				</Collapse>
 			</Navbar>
-			<Home id="Home" />
 			<Features id="Features" />
 			<Portfolio id="Portfolio" />
 			<Pricing id="Pricing" />
@@ -113,7 +107,7 @@ function App() {
 			<Skills id="Skills" />
 			<Clients id="Clients" />
 			<Contact id="Contact" />
-		</div>
+		</Container>
 	);
 }
 
