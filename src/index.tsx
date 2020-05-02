@@ -6,7 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
 
 const theme = {
-	main: '#505962',
+	// blue grey
+	textPrimary: '#505962',
+	// Aqua
 	secondary: '#1ebba3',
 };
 ReactDOM.render(

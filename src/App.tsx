@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import './App.scss';
 import Scrollspy from 'react-scrollspy';
 import { Home } from './containers/Home/Home';
@@ -29,13 +29,23 @@ import {
 // 		color: ${(props) => props.theme.main};
 // 	}
 // `;
+
+const StyledNavItem = styled(NavItem)`
+	&&& > .header-link {
+		color: ${(props) => props.theme.textPrimary};
+	}
+	&&&.isCurrent > .header-link {
+		color: ${(props) => props.theme.secondary};
+		font-weight: 700;
+	}
+`;
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
 	return (
 		<div className="App">
-			<Navbar fixed="top" color="light" light expand="md">
+			<Navbar fixed="top" color="dark" dark expand="lg">
 				<NavbarBrand href="/">BootKamp</NavbarBrand>
 				<Collapse isOpen={isOpen} navbar>
 					<Scrollspy
@@ -52,21 +62,46 @@ function App() {
 						]}
 						currentClassName="isCurrent"
 						componentTag={Nav}>
-						<NavItem>
-							<NavLink href="#section-1">section 1</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#section-2">section 2</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#section-3">section 3</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#section-4">section 4</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#section-5">section 5</NavLink>
-						</NavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Home">
+								Home
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Features">
+								Features
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Portfolio">
+								Portfolio
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Pricing">
+								Pricing
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Team">
+								Team
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="Skills">
+								Skills
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Clients">
+								Clients
+							</NavLink>
+						</StyledNavItem>
+						<StyledNavItem>
+							<NavLink className="header-link" href="#Contact">
+								Contact
+							</NavLink>
+						</StyledNavItem>
 					</Scrollspy>
 				</Collapse>
 			</Navbar>
