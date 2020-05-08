@@ -13,3 +13,16 @@ body {
 .text-nuno {
   color: #1ebba3
 }
+
+button:focus,
+a:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+button,
+a,
+a.btn {
+  transition: all .6s ease;
+  border: none !important;
+}
