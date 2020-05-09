@@ -10,6 +10,7 @@ const theme = {
 	textPrimary: '#505962',
 	// Aqua
 	secondary: '#1ebba3',
+	transparentBlack: 'rgba(0, 0, 0, 0.7)',
 };
 ReactDOM.render(
 	<React.StrictMode>
