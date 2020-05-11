@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 import { ScrollspyNavLink } from 'reactstrap-scrollspy';
 import { TogglerIcon } from '../../components/TogglerIcon';
+import { ConfigurableSpan as Span } from '../../components/ConfigurableSpan';
 import './Navbar.scss';
 
 const StyledNavbar = styled(ReactstrapNavbar)`
@@ -42,7 +43,6 @@ export const Navbar: React.FunctionComponent = (props) => {
 		};
 
 		document.addEventListener('scroll', onScroll);
-
 		return () => {
 			document.removeEventListener('scroll', onScroll);
 		};
@@ -50,9 +50,7 @@ export const Navbar: React.FunctionComponent = (props) => {
 
 	// const isDark = () => isScrolled || isOpen;
 	const handleLinkClick = (event) => {
-		event.preventDefault();
-		debugger;
-		console.log('Clicked');
+		setIsOpen(false);
 	};
 	return (
 		<StyledNavbar
@@ -74,51 +72,51 @@ export const Navbar: React.FunctionComponent = (props) => {
 			<Collapse isOpen={isOpen} navbar>
 				<Nav navbar className="ml-auto">
 					<NavItem>
-						<ScrollspyNavLink name="features">
-							<NavLink onClick={() => handleLinkClick()} href="#features">
-								Features
+						<ScrollspyNavLink id="doozy" name="features">
+							<NavLink href="#features">
+								<Span onClick={handleLinkClick}>Features</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>
 					<NavItem>
 						<ScrollspyNavLink name="portfolio">
 							<NavLink className="header-link" href="#portfolio">
-								Portfolio
+								<Span onClick={handleLinkClick}>Portfolio</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>
 					<NavItem>
 						<ScrollspyNavLink name="pricing">
 							<NavLink className="header-link" href="#pricing">
-								Pricing
+								<Span onClick={handleLinkClick}>Pricing</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>
 					<NavItem>
 						<ScrollspyNavLink name="team">
 							<NavLink className="header-link" href="#team">
-								Team
+								<Span onClick={handleLinkClick}>Team</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>
 					<NavItem>
 						<ScrollspyNavLink name="skills">
 							<NavLink className="header-link" href="#skills">
-								Skills
+								<Span onClick={handleLinkClick}>Skills</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>
 					<NavItem>
 						<ScrollspyNavLink name="clients">
 							<NavLink className="header-link" href="#clients">
-								Clients
+								<Span onClick={handleLinkClick}>Clients</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>
 					<NavItem>
 						<ScrollspyNavLink name="contact">
 							<NavLink className="header-link" href="#Contact">
-								Contact
+								<Span onClick={handleLinkClick}>Contact</Span>
 							</NavLink>
 						</ScrollspyNavLink>
 					</NavItem>

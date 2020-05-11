@@ -1,3 +1,4 @@
+// In seperate css file because using styled components changes component name and causes scrollspy to not recognize element
 .navbar .nav-item .nav-link {
   color: white !important;
 
