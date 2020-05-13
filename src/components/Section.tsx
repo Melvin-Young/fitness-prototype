@@ -7,10 +7,14 @@ const StyledSection = styled.section`
 	margin-bottom: 5px;
 `;
 const Section: React.FunctionComponent<ISectionProps> = (props) => {
-	return <StyledSection id={props.id}>{props.children}</StyledSection>;
+	return (
+		<StyledSection id={props.id} className={props.className}>
+			{props.children}
+		</StyledSection>
+	);
 };
 
-export interface ISectionProps {
+export interface ISectionProps extends React.HtmlHTMLAttributes<any> {
 	id: string;
 }
 

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 
-export const ConfigurableSpan: React.FunctionComponent<ISpanProps> = ({
+export const ConfigurableSpan: FunctionComponent<ISpanProps> = ({
 	id = '',
 	onClick,
 	children,
@@ -15,5 +15,5 @@ export const ConfigurableSpan: React.FunctionComponent<ISpanProps> = ({
 export interface ISpanProps {
 	id?: string;
 	onClick?: () => void;
-	children: any;
+	children: FunctionComponent | string;
 }

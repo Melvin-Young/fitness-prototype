@@ -10,7 +10,8 @@ import { Skills } from './containers/Skills/Skills';
 import { Clients } from './containers/Clients/Clients';
 import { Contact } from './containers/Contact/Contact';
 import { Navbar } from './containers/Navbar/Navbar';
-
+import { default as Image } from './components/BackgroundImage';
+import backgroundImage from '../src/img/computers.jpg';
 // const StyledNavItem = styled(NavItem)`
 // 	&&& > .header-link {
 // 		color: ${(props) => props.theme.textPrimary};
@@ -26,6 +27,7 @@ function App() {
 			<Scrollspy
 				names={[
 					'navbar',
+					'home',
 					'features',
 					'portfolio',
 					'pricing',
@@ -37,6 +39,7 @@ function App() {
 				]}
 				homeIndex={1}>
 				<Navbar />
+				<Image id="home" imageUrl={backgroundImage} />
 				<Features id="features" />
 				<Portfolio id="portfolio" />
 				<Pricing id="pricing" />

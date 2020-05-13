@@ -1,10 +1,10 @@
 html {
   padding: env(safe-area-inset);
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-  padding-top: 30px;
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
   color: #505962;

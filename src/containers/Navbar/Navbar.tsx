@@ -57,7 +57,7 @@ export const Navbar: React.FunctionComponent = (props) => {
 			className={`${isScrolled || isOpen ? 'dark-theme' : ''}`}
 			fixed="top"
 			expand="lg">
-			<NavbarBrand href="/">
+			<NavbarBrand href="#home">
 				<img
 					src={logo}
 					style={{
@@ -72,7 +72,14 @@ export const Navbar: React.FunctionComponent = (props) => {
 			<Collapse isOpen={isOpen} navbar>
 				<Nav navbar className="ml-auto">
 					<NavItem>
-						<ScrollspyNavLink id="doozy" name="features">
+						<ScrollspyNavLink name="home">
+							<NavLink href="#home">
+								<Span onClick={handleLinkClick}>Home</Span>
+							</NavLink>
+						</ScrollspyNavLink>
+					</NavItem>
+					<NavItem>
+						<ScrollspyNavLink name="features">
 							<NavLink href="#features">
 								<Span onClick={handleLinkClick}>Features</Span>
 							</NavLink>
