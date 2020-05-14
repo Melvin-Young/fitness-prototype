@@ -28,8 +28,8 @@ function App() {
 			<Scrollspy
 				names={[
 					'navbar',
-					'bg-image',
 					'home',
+					null,
 					'features',
 					'portfolio',
 					'pricing',
@@ -41,8 +41,8 @@ function App() {
 				]}
 				homeIndex={1}>
 				<Navbar />
-				<Image id="bg-image" imageUrl={backgroundImage} />
-				<Home id="home"/>
+				<Image id="home" imageUrl={backgroundImage} />
+				<Home id="home-text"/>
 				<Features id="features" />
 				<Portfolio id="portfolio" />
 				<Pricing id="pricing" />
