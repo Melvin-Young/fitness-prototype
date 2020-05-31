@@ -13,6 +13,7 @@ import { Navbar } from './containers/Navbar/Navbar';
 import { default as Image } from './components/BackgroundImage';
 import backgroundImage from '../src/img/computers.jpg';
 import { Home } from './containers/Home/Home';
+import { BouncingArrow } from './components/BouncingArrow';
 // const StyledNavItem = styled(NavItem)`
 // 	&&& > .header-link {
 // 		color: ${(props) => props.theme.textPrimary};
@@ -24,12 +25,13 @@ import { Home } from './containers/Home/Home';
 // `;
 function App() {
 	return (
-		<div style={{ overflow: 'hidden' }}>
+		<div id="mainApp" style={{ overflow: 'hidden' }}>
 			<Scrollspy
 				names={[
 					'navbar',
-					'home',
 					null,
+					null,
+					'home',
 					'features',
 					'portfolio',
 					'pricing',
@@ -39,10 +41,11 @@ function App() {
 					'contact',
 					null,
 				]}
-				homeIndex={1}>
+				homeIndex={3}>
 				<Navbar />
 				<Image id="home" imageUrl={backgroundImage} />
-				<Home id="home-text"/>
+				<BouncingArrow />
+				<Home id="home-text" />
 				<Features id="features" />
 				<Portfolio id="portfolio" />
 				<Pricing id="pricing" />

@@ -11,7 +11,7 @@ body {
 }
 
 .text-nuno {
-  color: #1ebba3
+  color: #1ebba3;
 }
 
 button:focus,
@@ -23,6 +23,5 @@ a:focus {
 button,
 a,
 a.btn {
-  transition: all .6s ease;
-  border: none !important;
+  transition: all 0.6s ease;
 }
