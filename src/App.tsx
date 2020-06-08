@@ -1,6 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
-import './App.scss';
 import { Scrollspy } from 'reactstrap-scrollspy';
 import { Features } from './containers/Features/Features';
 import { Portfolio } from './containers/Portfolio/Portfolio';
@@ -46,13 +44,13 @@ function App() {
 				<Image id="home" imageUrl={backgroundImage} />
 				<BouncingArrow />
 				<Home id="home-text" />
-				<Features id="features" />
-				<Portfolio id="portfolio" />
-				<Pricing id="pricing" />
-				<Team id="team" />
-				<Skills id="skills" />
-				<Clients id="clients" />
-				<Contact id="contact" />
+				<Features className="offset" id="features" />
+				<Portfolio className="offset" id="portfolio" />
+				<Pricing className="offset" id="pricing" />
+				<Team className="offset" id="team" />
+				<Skills className="offset" id="skills" />
+				<Clients className="offset" id="clients" />
+				<Contact className="offset" id="contact" />
 			</Scrollspy>
 		</div>
 	);

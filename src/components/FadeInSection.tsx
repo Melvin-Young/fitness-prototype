@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, HtmlHTMLAttributes } from 'react';
 
 function buildThresholdList(steps: number) {
 	let thresholds = [];
@@ -12,14 +12,14 @@ function buildThresholdList(steps: number) {
 	return thresholds;
 }
 
-function createObserver(styleTarget: string, steps: number) {
+function createObserver(fadeTarget: string, steps: number) {
 	let options = {
 		threshold: buildThresholdList(steps),
 	};
 
 	return new IntersectionObserver((entries) => {
 		const elementsToStyle = Array.from(
-			document.getElementsByClassName(styleTarget) as HTMLCollectionOf<
+			document.getElementsByClassName(fadeTarget) as HTMLCollectionOf<
 				HTMLElement
 			>
 		);
@@ -34,13 +34,13 @@ function createObserver(styleTarget: string, steps: number) {
 }
 
 export const FadeInSection = ({
-	styleTarget = '#FadeInSectionBase',
-	steps = 20,
+	fadeTarget = '#FadeInSectionBase',
+	steps = 1,
 	children,
 }: IProps) => {
 	const domRef = useRef(null);
 	useEffect(() => {
-		const observer = createObserver(styleTarget, steps);
+		const observer = createObserver(fadeTarget, steps);
 		console.log(observer.thresholds);
 		observer.observe(domRef.current!);
 		return () => observer.unobserve(domRef.current!);
@@ -54,8 +54,8 @@ export const FadeInSection = ({
 	);
 };
 
-interface IProps {
-	styleTarget?: string;
+interface IProps extends HtmlHTMLAttributes<any> {
+	fadeTarget?: string;
 	steps?: number;
 	children: any;
 }

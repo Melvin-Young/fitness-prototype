@@ -1,14 +1,19 @@
 import React, { FunctionComponent, HtmlHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Animated } from 'react-animated-css';
-import { Button } from 'reactstrap';
+import { StylableButton } from '../../components/StyledButton';
 import { FadeInSection } from '../../components/FadeInSection';
-const StyledLandingSection = styled.div`
+import Section from '../../components/Section';
+
+const StyledHomeSection = styled(Section)`
 	position: absolute;
 	top: 38%;
 	width: 100%;
 	max-width: 100%;
 	z-index: 1;
+	height: auto;
+`;
+const StyledLandingText = styled.div`
 	.heading-text {
 		font-size: 4.5rem;
 		letter-spacing: 0.3rem;
@@ -26,7 +31,6 @@ const StyledLandingSection = styled.div`
 		padding-bottom: 2rem;
 	}
 	.get-started {
-		text-transform: uppercase;
 		font-weight: bold;
 		font-size: 1.5rem;
 		border-width: medium;
@@ -35,8 +39,9 @@ const StyledLandingSection = styled.div`
 `;
 
 export const Home: FunctionComponent<HtmlHTMLAttributes<any>> = (props) => (
-	<FadeInSection styleTarget="#bouncingArrow">
-		<StyledLandingSection className="caption text-center text-light text-uppercase">
+	// <FadeInSection id="home" fadeTarget="#bouncingArrow">
+	<StyledHomeSection style={{ position: 'relative' }} id="home">
+		<StyledLandingText className="caption text-center text-light text-uppercase">
 			<Animated
 				animationIn="bounceInUp"
 				animationOut="fadeOut"
@@ -59,7 +64,7 @@ export const Home: FunctionComponent<HtmlHTMLAttributes<any>> = (props) => (
 				animationOut="fadeOut"
 				animationInDuration={2400}
 				isVisible>
-				<Button
+				<StylableButton
 					id="bouncingArrow"
 					outline
 					color="light"
@@ -67,8 +72,9 @@ export const Home: FunctionComponent<HtmlHTMLAttributes<any>> = (props) => (
 					className=" get-started rounded-0"
 					href="#features">
 					Get Started
-				</Button>
+				</StylableButton>
 			</Animated>
-		</StyledLandingSection>
-	</FadeInSection>
+		</StyledLandingText>
+	</StyledHomeSection>
+	// </FadeInSection>
 );

@@ -7,7 +7,7 @@ import './index.scss';
 
 const theme = {
 	// blue grey
-	textPrimary: '#505962',
+	primary: '#505962',
 	// Aqua
 	secondary: '#1ebba3',
 	transparentBlack: 'rgba(0, 0, 0, 0.7)',

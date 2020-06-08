@@ -3,8 +3,14 @@ import styled from 'styled-components';
 
 const StyledSection = styled.section`
 	height: 100vh;
-	background-color: grey;
-	margin-bottom: 5px;
+	background-color: transparent;
+
+	&.offset::before {
+		content: '';
+		height: 4rem;
+		display: block;
+		margin-top: -4rem;
+	}
 `;
 const Section: React.FunctionComponent<ISectionProps> = (props) => {
 	return (
