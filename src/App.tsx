@@ -41,7 +41,7 @@ function App() {
 				]}
 				homeIndex={3}>
 				<Navbar />
-				<Image id="home" imageUrl={backgroundImage} />
+				<Image id="home" height="100vh" imageUrl={backgroundImage} />
 				<BouncingArrow />
 				<Home id="home-text" />
 				<Features className="offset" id="features" />

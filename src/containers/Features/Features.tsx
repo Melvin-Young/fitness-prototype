@@ -10,16 +10,19 @@ import {
 	faMobileAlt,
 	faPlay,
 	faDesktop,
+	faAngleDoubleDown,
+	faSlidersH,
 } from '@fortawesome/free-solid-svg-icons';
+import { faWpforms } from '@fortawesome/free-brands-svg-icons';
 
 const FeaturesSection = styled(Section)``;
 export const Features: React.FunctionComponent<ISectionProps> = (props) => (
 	<FeaturesSection id={props.id} className={props.className}>
 		<ScrollAnimation animateIn="fadeInUp" animateOut="fadeOut">
 			<Blurb />
-			<Jumbotron className="m-0 py-5">
+			<Jumbotron className="m-0 py-6">
 				<UnderlinedHeader title="features" />
-				<Container>
+				<Container fluid>
 					<Row className="text-center px-lg-4 px-xl-5">
 						<FeatureCard
 							animation="fadeInLeft"
@@ -40,14 +43,36 @@ export const Features: React.FunctionComponent<ISectionProps> = (props) => (
 							animation="fadeInRight"
 							icon={faPlay}
 							offsetIcon={[2, 0]}
-							transformIcon="shrink-1"
 							header="Custom Animation"
 							body="Animate.css and Waypoints.js allow for smooth animation scrolling down the site.">
+							{' '}
+						</FeatureCard>
+						<FeatureCard
+							animation="fadeInLeft"
+							icon={faAngleDoubleDown}
+							header="Parallax Scrolling"
+							body="Fixed background images allow the theme to have content-filled parallax scrolling sections.">
+							{' '}
+						</FeatureCard>
+						<FeatureCard
+							animation="fadeInUp"
+							icon={faSlidersH}
+							header="Content Slider"
+							body="Owl.Carousel.js makes navigating content sliders seamless with its content carousel navigation.">
+							{' '}
+						</FeatureCard>
+						<FeatureCard
+							animation="fadeInRight"
+							icon={faWpforms}
+							header="Contact Form"
+							body="The Bootstrap HTML form will send directily to your email address using PHPMailer.php">
 							{' '}
 						</FeatureCard>
 					</Row>
 				</Container>
 			</Jumbotron>
+			{/* Start of Fixed Background Image Dark */}
+			{/* End of Fixed Background Image Dark */}
 		</ScrollAnimation>
 	</FeaturesSection>
 );

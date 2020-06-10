@@ -5,7 +5,7 @@ const StyledImage = styled('div')<IImageProps>`
 	&.landing {
 		position: relative;
 		width: 100%;
-		height: 100vh;
+		height: ${(props) => props.height};
 		display: table;
 		z-index: -1;
 
@@ -34,7 +34,11 @@ const StyledImage = styled('div')<IImageProps>`
 `;
 const BackgroundImage: React.FunctionComponent<IImageProps> = (props) => {
 	return (
-		<StyledImage id={props.id} imageUrl={props.imageUrl} className="landing">
+		<StyledImage
+			id={props.id}
+			height={props.height}
+			imageUrl={props.imageUrl}
+			className="landing">
 			<div className="home-wrap">
 				<div className="home-inner"></div>
 			</div>
@@ -44,6 +48,7 @@ const BackgroundImage: React.FunctionComponent<IImageProps> = (props) => {
 
 export interface IImageProps extends React.HtmlHTMLAttributes<any> {
 	id?: string;
+	height: string;
 	imageUrl: string;
 }
 
