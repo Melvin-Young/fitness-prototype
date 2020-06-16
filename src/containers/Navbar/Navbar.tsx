@@ -32,7 +32,7 @@ const StyledNavbar = styled(ReactstrapNavbar)`
 	}
 `;
 
-export const Navbar: React.FunctionComponent = (props) => {
+export const Navbar: FunctionComponent = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleNavbar = () => setIsOpen(!isOpen);
 	const [isScrolled, setScrolled] = useState('');

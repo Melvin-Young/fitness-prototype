@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Section, { ISectionProps } from '../../components/Section';
 import Blurb from '../../components/Blurb';
@@ -16,7 +16,7 @@ import {
 import { faWpforms } from '@fortawesome/free-brands-svg-icons';
 
 const FeaturesSection = styled(Section)``;
-export const Features: React.FunctionComponent<ISectionProps> = (props) => (
+export const Features: FunctionComponent<ISectionProps> = (props) => (
 	<FeaturesSection id={props.id} className={props.className}>
 		<ScrollAnimation animateIn="fadeInUp" animateOut="fadeOut">
 			<Blurb />

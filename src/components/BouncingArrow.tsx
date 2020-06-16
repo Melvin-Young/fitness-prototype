@@ -1,8 +1,8 @@
-import * as React from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { Animated } from "react-animated-css";
+import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { Animated } from 'react-animated-css';
 
 const StyledArrowIcon = styled.div`
   position: absolute;
@@ -19,7 +19,7 @@ const StyledArrowIcon = styled.div`
     }
   }
 `;
-export const BouncingArrow: React.FunctionComponent = () => (
+export const BouncingArrow: FunctionComponent = () => (
   <StyledArrowIcon className="arrow d-none d-md-block">
     <Animated animationIn="bounce" animationOut="fadeOut" isVisible>
       <a href="#contact">

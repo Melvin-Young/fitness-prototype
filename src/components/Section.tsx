@@ -1,5 +1,5 @@
-import * as React from "react";
-import styled from "styled-components";
+import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 
 const StyledSection = styled.section`
   height: 100vh;
@@ -12,7 +12,7 @@ const StyledSection = styled.section`
     margin-top: -4rem;
   }
 `;
-const Section: React.FunctionComponent<ISectionProps> = (props) => {
+const Section: FunctionComponent<ISectionProps> = (props) => {
   return (
     <StyledSection id={props.id} className={props.className}>
       {props.children}

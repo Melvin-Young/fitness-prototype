@@ -1,5 +1,5 @@
-import * as React from "react";
-import styled from "styled-components";
+import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
 
 const StyledImage = styled("div")<IImageProps>`
   &.landing {
@@ -36,7 +36,7 @@ const StyledImage = styled("div")<IImageProps>`
     }
   }
 `;
-const BackgroundImage: React.FunctionComponent<IImageProps> = (props) => {
+const BackgroundImage: FunctionComponent<IImageProps> = (props) => {
   return (
     <StyledImage
       id={props.id}
