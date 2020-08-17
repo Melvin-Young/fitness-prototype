@@ -6,6 +6,7 @@ import { Jumbotron, Container, Col, Row } from 'reactstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
 import UnderlinedHeader from '../../components/UnderlinedHeader';
 import FeatureCard from '../../components/FeatureCard';
+import TechCard from '../../components/TechCard';
 import {
 	faMobileAlt,
 	faPlay,
@@ -13,7 +14,14 @@ import {
 	faAngleDoubleDown,
 	faSlidersH,
 } from '@fortawesome/free-solid-svg-icons';
-import { faWpforms } from '@fortawesome/free-brands-svg-icons';
+import {
+	faWpforms,
+	faBootstrap,
+	faHtml5,
+	faCss3Alt,
+} from '@fortawesome/free-brands-svg-icons';
+import BackgroundImage from '../../components/FixedImage';
+import AppleImage from '../../img/fixed/apple.jpg';
 
 const FeaturesSection = styled(Section)``;
 export const Features: FunctionComponent<ISectionProps> = (props) => (
@@ -72,6 +80,27 @@ export const Features: FunctionComponent<ISectionProps> = (props) => (
 				</Container>
 			</Jumbotron>
 			{/* Start of Fixed Background Image Dark */}
+			<BackgroundImage height="40vh" imageUrl={AppleImage} dark>
+				<UnderlinedHeader title="Built With Care" />
+				<TechCard
+					animation="fadeInLeft"
+					icon={faHtml5}
+					header="Html 5"
+					body="Built with the latest, HTML 5."
+				/>
+				<TechCard
+					animation="fadeInUp"
+					icon={faBootstrap}
+					header="Bootstrap"
+					body="Built with the latest, Bootstrap 4."
+				/>
+				<TechCard
+					animation="fadeInRight"
+					icon={faCss3Alt}
+					header="Css 3"
+					body="Built with the latest, CSS 3."
+				/>
+			</BackgroundImage>
 			{/* End of Fixed Background Image Dark */}
 		</ScrollAnimation>
 	</FeaturesSection>

@@ -2,26 +2,25 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  height: 100vh;
-  background-color: transparent;
+	background-color: transparent;
 
-  &.offset::before {
-    content: "";
-    height: 4rem;
-    display: block;
-    margin-top: -4rem;
-  }
+	&.offset::before {
+		content: '';
+		height: 4rem;
+		display: block;
+		margin-top: -4rem;
+	}
 `;
 const Section: FunctionComponent<ISectionProps> = (props) => {
-  return (
-    <StyledSection id={props.id} className={props.className}>
-      {props.children}
-    </StyledSection>
-  );
+	return (
+		<StyledSection id={props.id} className={props.className}>
+			{props.children}
+		</StyledSection>
+	);
 };
 
 export interface ISectionProps extends React.HtmlHTMLAttributes<any> {
-  id?: string;
+	id?: string;
 }
 
 export default Section;

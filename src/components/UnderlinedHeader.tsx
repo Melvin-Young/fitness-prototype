@@ -19,7 +19,7 @@ const StyledHeading = styled(Col)`
 `;
 
 const UnderlinedHeader: FunctionComponent<IHeadingProps> = (props) => (
-	<StyledHeading xs={12}>
+	<StyledHeading className={props.className} xs={12}>
 		<h3>{props.title}</h3>
 		<div></div>
 	</StyledHeading>
