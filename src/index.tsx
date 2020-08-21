@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { ThemeProvider } from 'styled-components';
+import SimpleReactLightbox from 'simple-react-lightbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
 
@@ -14,9 +15,11 @@ const theme = {
 };
 ReactDOM.render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<App />
-		</ThemeProvider>
+		<SimpleReactLightbox>
+			<ThemeProvider theme={theme}>
+				<App />
+			</ThemeProvider>
+		</SimpleReactLightbox>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

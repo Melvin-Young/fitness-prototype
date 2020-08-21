@@ -1,10 +1,20 @@
 import React, { FunctionComponent } from 'react';
 import { Col } from 'reactstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
+import styled from 'styled-components';
 
+const StyledCol = styled(Col)`
+	.image {
+		transition: transform 0.4s ease;
+		&:hover {
+			cursor: zoom-in;
+			transform: scale(1.3);
+		}
+	}
+`;
 const PortfolioCard: FunctionComponent<ICardProps> = (props) => {
 	return (
-		<Col className="p-0" sm={6} md={3}>
+		<StyledCol className="p-0" sm={6} md={3}>
 			<ScrollAnimation
 				animateIn={props.animation}
 				delay={props.delayMs}
@@ -18,7 +28,7 @@ const PortfolioCard: FunctionComponent<ICardProps> = (props) => {
 					</a>
 				</div>
 			</ScrollAnimation>
-		</Col>
+		</StyledCol>
 	);
 };
 

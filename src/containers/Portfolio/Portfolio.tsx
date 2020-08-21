@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import Section, { ISectionProps } from '../../components/Section';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import UnderlinedHeader from '../../components/UnderlinedHeader';
 import PortfolioCard from '../../components/PortfolioCard';
+import { StylableButton } from '../../components/StyledButton';
+import { SRLWrapper } from 'simple-react-lightbox';
 
 export const Portfolio: FunctionComponent<ISectionProps> = (props) => (
 	<Section id={props.id} className={props.className}>
@@ -53,6 +55,28 @@ export const Portfolio: FunctionComponent<ISectionProps> = (props) => (
 					gallery="portfolio-proj"
 					delayMs={200}
 				/>
+			</Row>
+			<Row
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+				}}>
+				<Col
+					sm={8}
+					md={9}
+					lg={10}
+					style={{
+						textAlign: 'center',
+					}}>
+					<span className="lead">
+						{' '}
+						This is some placeholder for my portfolio blurb. Pls send hlp 🥺
+					</span>
+				</Col>
+				<StylableButton square size="lg">
+					I'm a button
+				</StylableButton>
 			</Row>
 		</Container>
 	</Section>

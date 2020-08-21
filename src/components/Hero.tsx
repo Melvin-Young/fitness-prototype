@@ -8,7 +8,7 @@ const StyledImage = styled('div')<IImageProps>`
 		height: ${(props) => props.height};
 		display: table;
 		/* this breaks buttons for some reason, need to fix for mobile */
-		z-index: -1;
+		/* z-index: -1; */
 		& > .hero-wrap {
 			clip: rect(0 auto auto 0);
 			position: absolute;
